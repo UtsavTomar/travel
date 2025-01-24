@@ -4,7 +4,6 @@ from crewai_tools import SerperDevTool  # For travel research
 from crewai import LLM
 
 
-SERPER_API_KEY = "9b68f579622222604d8248bab92f2135687aa540"
 
 # Initializing tools
 serper_tool = SerperDevTool()
@@ -96,13 +95,10 @@ travel_crew = Crew(
     process=Process.sequential  # Tasks will run sequentially
 )
 
-# Inputs
-inputs = {
-    "cities": ["Paris", "Rome", "Barcelona"],
-    "interests": ["museums", "food", "architecture"],
-    "no_of_days": 7,
-    "budget": 1500  # Example budget
-}
+def run(inputs):
+    inputs = inputs
+    result = travel_crew.kickoff(inputs=inputs)
+    return result
 
 # Run the crew
 result = travel_crew.kickoff(inputs=inputs)
