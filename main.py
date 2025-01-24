@@ -100,7 +100,3 @@ def run(inputs):
     result = travel_crew.kickoff(inputs=inputs)
     return result
 
-# Run the crew
-result = travel_crew.kickoff(inputs=inputs)
-
-print(result)
